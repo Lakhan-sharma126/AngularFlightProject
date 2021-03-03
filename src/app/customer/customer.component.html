@@ -21,9 +21,12 @@
                 <input type="text" formControlName="address" placeholder="Address" class="form-control">
             </div>
           
-            <div class="col-md-2">
-                <button class="btn btn-primary btn-block mt-4" (click)=" onSubmit()">Save</button>
+            <div class="col-md-2" *ngIf="!update">
+                <button class="btn btn-primary btn-block mt-4" [disabled]="clicksave" (click)=" onSubmit()">Save</button>
             </div>
+            <div class="col-md-2" *ngIf="update">
+              <button class="btn btn-primary btn-block mt-4" [disabled]="clicksave" (click)="formupdate()">Update</button>
+          </div>
         </div>
         </form>
         </div>

@@ -11,16 +11,18 @@ export class CustomerComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
   arr: any;
-
+  update=false;
+  updateid='';
+  clicksave=false;
   constructor(private formBuilder: FormBuilder,private cservice:CustomerService) { }
 
   ngOnInit() {
       this.tabledata();
       this.registerForm = this.formBuilder.group({
-           first_name: ['', Validators.required],
-           last_name: ['', Validators.required],
-          email: ['', [Validators.required, Validators.email]],
-          address: ['', Validators.required],
+           first_name: [''],
+           last_name: [''],
+          email: [''],
+          address: [''],
           
       });
   }
@@ -31,6 +33,7 @@ export class CustomerComponent implements OnInit {
     if (this.registerForm.invalid) {
         return;
     }
+    this.clicksave=true;
     const param={
       first_name:this.registerForm.value.first_name,
       last_name:this.registerForm.value.last_name,
@@ -38,26 +41,61 @@ export class CustomerComponent implements OnInit {
       address:this.registerForm.value.address
     }
     this.cservice.add(param).subscribe(res=>{
-      this.cservice.getdata().subscribe(resp=>{
-        this.arr=resp;
-        this.registerForm.reset();
-    });
+      setTimeout(() => {
+        this.cservice.getdata().subscribe(resp=>{
+          this.arr=resp;
+          this.registerForm.reset();
+          this.clicksave=false;
+      });
+      },500);
+  
     })
 
   
 }
+
+
+
+
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
   
+formupdate()
+{
+  this.submitted = true;
+
+  // stop here if form is invalid
+  if (this.registerForm.invalid) {
+      return;
+  }
+  const param={
+    first_name:this.registerForm.value.first_name,
+    last_name:this.registerForm.value.last_name,
+    email:this.registerForm.value.email,
+    address:this.registerForm.value.address
+  }
+  this.cservice.update(this.updateid,param).subscribe(res=>{
+    this.cservice.getdata().subscribe(resp=>{
+      this.arr=resp;
+      this.registerForm.reset();
+      this.updateid='';
+      this.update=false;
+  });
+  })
+}
+
   edit(value:any)
   {
     this.cservice.getdatabyid(value).subscribe(res=>{
+      this.updateid=res.id;
+      this.update=true;
       this.registerForm.patchValue({
         first_name:res.first_name,
         last_name:res.last_name,
         email:res.email,
         address:res.address
-      })
+      });
+      
     })
   }
   tabledata()

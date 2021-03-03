@@ -19,7 +19,7 @@ export class CustomerService {
 
   getdatabyid(id:any)
   {
-      return this.http.get(`http://localhost:7000/users/list:${id}`).pipe(map(x => x as any));
+      return this.http.get(`http://localhost:7000/users/get/${id}`).pipe(map(x => x as any));
   }
   delete(id: any)
   {
