@@ -406,3 +406,10 @@ form.sign-in-form {
 }
   
 }
+.invalid-feedback
+{
+  position: absolute;
+  left: 20px;
+  top: 54px;
+  
+}

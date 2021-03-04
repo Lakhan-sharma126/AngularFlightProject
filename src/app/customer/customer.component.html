@@ -4,19 +4,19 @@
       <div class="card-body">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label>First Name</label>
                 <input type="text" formControlName="first_name" placeholder="First name" class="form-control">
              </div>
-             <div class="col-md-2">
+             <div class="col-md-3">
                 <label>Last Name</label>
                 <input type="text" formControlName="last_name" placeholder="First name" class="form-control">
              </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label>Email</label>
                 <input type="text" formControlName="email" placeholder="Email " class="form-control">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label>Address</label>
                 <input type="text" formControlName="address" placeholder="Address" class="form-control">
             </div>
@@ -52,7 +52,7 @@
                         <td>{{item.address}}</td>
                         <td>
                          <i class="fa fa-pencil text-info fnt17" (click)="edit(item.id)"  style="cursor: pointer;"></i>
-                         <i class="fa fa-trash-o text-danger ml-3 fnt17" (click)="delete(item.id)" style="padding-right: 10px!important;cursor: pointer;"></i>
+                         <i class="fa fa-trash-o text-danger ml-3 fnt17" (click)="delete(item.id)" style="margin-left: 20px!important;cursor: pointer;"></i>
                          </td>
                       </tr>
                     </tbody>

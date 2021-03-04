@@ -2,17 +2,23 @@
     <div class="container loginfile ">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form [formGroup]="registerForm"  class="sign-in-form">
             <h2 class="title" >Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"  placeholder="Username" />
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" required />
+              <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  placeholder="Password"  />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
             </div>
-            <input type="button" routerLink="/dashboard" value="Login" class="btn solid" required />
+            </div>
+            <input type="button" (click)="onSubmit()" value="Login" class="btn solid"  />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">

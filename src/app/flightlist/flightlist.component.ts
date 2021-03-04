@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightService } from './flight.service';
 
 @Component({
   selector: 'app-flightlist',
@@ -10,9 +11,17 @@ export class FlightlistComponent implements OnInit {
   public flights = Array(20)
     .fill(1)
     .map((x, i) => i);
+  arr: any;
 
-  constructor() {}
+  constructor(private cservice:FlightService) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.tabledata()
+  }
+ tabledata()
+  {
+     this.cservice.getdata().subscribe(res=>{
+      this.arr=res;
+  });
+  }
 }

@@ -3,7 +3,7 @@
     <div class="card mb-3">
       <div class="card-body">
         <div class="row">
-          <div class="col">-</div>
+          <div class="col">Flight Name</div>
           <div class="col">Departure</div>
           <div class="col">Duration</div>
           <div class="col">Arrival</div>
@@ -12,16 +12,17 @@
         </div>
       </div>
     </div>
-    <div class="card white-transparent"  *ngFor="let flight of flights">
+    <div class="card white-transparent"  *ngFor="let item of arr">
       <div class="card-body">
         <div class="row">
           <div class="col">
-          <img width={{40}} src="../../assets/images/indigo_logo.png" alt="indigo Logo" />   IndiGo
+          <img width={{40}} src="{{item.images}}" alt="indigo Logo" />   IndiGo
           </div>
-          <div class="col">05:00 <br /> New Delhi</div>
-          <div class="col">02 h 40 m <br />  Non stop</div>
-          <div class="col">07:40 <br />  Bengaluru</div>
-          <div class="col d-flex justify-content-end">₹ 6,867</div>
+          <div class="col">{{item.flightname}}</div>
+          <div class="col">{{item.Departure}}</div>
+          <div class="col">{{item.Duration}}</div>
+          <div class="col d-flex justify-content-end">{{item.Arrival}}</div>
+          <div class="col">{{item.Price}}</div>
           <div class="col d-flex justify-content-end">
             <button class="btn btn-primary ">Book</button>
           </div>

@@ -20,6 +20,8 @@ import { NormalorderComponent } from './normalorder/normalorder.component';
 import { PremiumorderComponent } from './premiumorder/premiumorder.component';
 import { FeedbackModuleModule } from './feedback-module/feedback-module.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PiechartComponent } from './piechart/piechart.component';
+import {ChartModule} from 'primeng/chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +36,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrderComponent,
     FooterComponent,
     NormalorderComponent,
-    PremiumorderComponent
+    PremiumorderComponent,
+    PiechartComponent
   ],
   imports: [
     BrowserModule,
+    ChartModule,
     ReactiveFormsModule,
     AppRoutingModule,
     // FeedbackModuleModule,
