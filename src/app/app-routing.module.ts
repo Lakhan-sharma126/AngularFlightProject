@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { from } from 'rxjs';
 import { CustomerComponent } from './customer/customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FlightbookComponent } from './flightbook/flightbook.component';
 import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
 import { NormalorderComponent } from './normalorder/normalorder.component';
 import { OrderComponent } from './order/order.component';
+import { PaymanentComponent } from './paymanent/paymanent.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { PremiumorderComponent } from './premiumorder/premiumorder.component';
 
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path:'flightlist',component:FlightlistComponent},
   { path:'customer',component:CustomerComponent},
   {path:'piechart',component:PiechartComponent},
+  {path:'pay',component:PaymanentComponent},
+  {path:'flightbook',component:FlightbookComponent},
   { path:'order',component:OrderComponent,
   children: [
     { path: '', redirectTo: 'normalOrder', pathMatch: 'full' },

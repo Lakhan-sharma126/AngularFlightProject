@@ -16,7 +16,7 @@
   .header .buttons.right {
     position: absolute;
     right: 16px;
-    top: 22px;
+    top: 12px;
   }
   .header .buttons a {
     color: #fff;
@@ -40,4 +40,38 @@
     color: #fff!important;
     position: relative!important;
     top: -10px!important;
+  }
+  .profile-pic {
+    height:40px;
+    position: relative;
+    width:40px;
+    top:-1px;
+    margin-left: 10px;
+    bottom: 4px;
+    object-fit: center;
+    border-radius: 50%;
+    border: 2px solid #2f96f2;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    right: -16px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .logout
+  {
+    color: #010406!important;
   }

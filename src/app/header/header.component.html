@@ -10,7 +10,13 @@
 		<a class="font-weight700" routerLink="/dashboard">Dashboard</a>
 		<a class="font-weight700" routerLink="/customer">Customer</a>
 		<a class="font-weight700" routerLink="/feedback/viewfeedback">Feedback</a>
-		<a class="font-weight700" href="/login">Logout</a>
+	
+		<div class="dropdown">
+			<span>  <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=b38c22a46932485790a3f52c61fcbe5a" alt="John Doe" class="profile-pic"></span>
+			<div class="dropdown-content">
+				<a class="font-weight700 logout" routerLink="/login">Logout</a>
+			</div>
+		  </div>
 		<!-- <a href="#">{{today | date:'fullTime'}}</a> -->
 		<!-- <a href="#">{{2| testpipe:2}}</a> -->
 	</div>

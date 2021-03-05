@@ -22,6 +22,8 @@ import { FeedbackModuleModule } from './feedback-module/feedback-module.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PiechartComponent } from './piechart/piechart.component';
 import {ChartModule} from 'primeng/chart';
+import { PaymanentComponent } from './paymanent/paymanent.component';
+import { FlightbookComponent } from './flightbook/flightbook.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import {ChartModule} from 'primeng/chart';
     FooterComponent,
     NormalorderComponent,
     PremiumorderComponent,
-    PiechartComponent
+    PiechartComponent,
+    PaymanentComponent,
+    FlightbookComponent
   ],
   imports: [
     BrowserModule,
